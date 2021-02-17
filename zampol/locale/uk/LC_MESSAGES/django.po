@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-16 10:42+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: .\osoba\models.py:6 .\osoba\models.py:18 .\osoba\models.py:30
+#: .\osoba\models.py:42
+msgid "Name"
+msgstr ""
+
+#: .\osoba\models.py:12
+msgid "Military Rank"
+msgstr "Військове звання"
+
+#: .\osoba\models.py:13
+msgid "Military Ranks"
+msgstr "Військові звання"
+
+#: .\osoba\models.py:24
+msgid "Platoon"
+msgstr "Рота"
+
+#: .\osoba\models.py:25
+msgid "Platoons"
+msgstr "Роти"
+
+#: .\osoba\models.py:36
+msgid "Unit"
+msgstr "Взвод"
+
+#: .\osoba\models.py:37
+msgid "Units"
+msgstr "Взвода"
+
+#: .\osoba\models.py:43
+msgid "SHPK"
+msgstr ""
+
+#: .\osoba\models.py:49
+msgid "Official Position"
+msgstr "Посада"
+
+#: .\osoba\models.py:50
+msgid "Official Positions"
+msgstr "Посади"
+
+#: .\osoba\models.py:59
+msgid "Name Person"
+msgstr "Ім'я В/С"
+
+#: .\osoba\models.py:60
+msgid "Sename"
+msgstr "Прізвище"
+
+#: .\osoba\models.py:61
+msgid "third name"
+msgstr "По батькові"
+
+#: .\osoba\models.py:62
+msgid "birth date"
+msgstr ""
+
+#: .\osoba\models.py:74
+msgid "ServiseID"
+msgstr "Військовослужбовець"
+
+#: .\osoba\models.py:75
+msgid "ServiseIDs"
+msgstr "Військовослужбовці"
+
+#: .\zampol\settings.py:120
+msgid "English"
+msgstr "Англійська"
+
+#: .\zampol\settings.py:121
+msgid "Українська"
+msgstr "Українська"

@@ -1,2 +1,4 @@
 django
 docxtpl
+django-extensions
+Pillow
