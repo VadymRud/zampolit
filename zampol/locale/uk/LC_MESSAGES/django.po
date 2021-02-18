@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 10:42+0300\n"
+"POT-Creation-Date: 2021-02-18 14:42+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,9 +22,9 @@ msgstr ""
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: .\osoba\models.py:6 .\osoba\models.py:18 .\osoba\models.py:30
-#: .\osoba\models.py:42
+#: .\osoba\models.py:41 .\osoba\models.py:53
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
 #: .\osoba\models.py:12
 msgid "Military Rank"
@@ -38,6 +38,8 @@ msgstr "Військові звання"
 msgid "Platoon"
 msgstr "Рота"
 
+# msgid "Platoon"
+# msgstr "Рота"
 #: .\osoba\models.py:25
 msgid "Platoons"
 msgstr "Роти"
@@ -50,39 +52,73 @@ msgstr "Взвод"
 msgid "Units"
 msgstr "Взвода"
 
-#: .\osoba\models.py:43
-msgid "SHPK"
+#: .\osoba\models.py:47 .\osoba\models.py:48
+msgid "Company"
 msgstr ""
 
-#: .\osoba\models.py:49
+#: .\osoba\models.py:54
+msgid "SHPK"
+msgstr "ШПК"
+
+#: .\osoba\models.py:60
 msgid "Official Position"
 msgstr "Посада"
 
-#: .\osoba\models.py:50
+#: .\osoba\models.py:61
 msgid "Official Positions"
 msgstr "Посади"
 
-#: .\osoba\models.py:59
+#: .\osoba\models.py:70
 msgid "Name Person"
 msgstr "Ім'я В/С"
 
-#: .\osoba\models.py:60
+#: .\osoba\models.py:71
 msgid "Sename"
 msgstr "Прізвище"
 
-#: .\osoba\models.py:61
+#: .\osoba\models.py:72
 msgid "third name"
 msgstr "По батькові"
 
-#: .\osoba\models.py:62
+#: .\osoba\models.py:73
 msgid "birth date"
-msgstr ""
+msgstr "Дата народження"
 
 #: .\osoba\models.py:74
+#, fuzzy
+#| msgid "Military Rank"
+msgid "military rank"
+msgstr "Військове звання"
+
+#: .\osoba\models.py:76
+msgid "unit"
+msgstr "Взод"
+
+#: .\osoba\models.py:77
+#, fuzzy
+#| msgid "Platoon"
+msgid "platoon"
+msgstr "Рота"
+
+#: .\osoba\models.py:78
+msgid "image3x4"
+msgstr ""
+
+#: .\osoba\models.py:79
+msgid "image_face3x4"
+msgstr "Фотокартка 3 на 4"
+
+#: .\osoba\models.py:80
+#, fuzzy
+#| msgid "Official Position"
+msgid "official position"
+msgstr "Посада"
+
+#: .\osoba\models.py:86
 msgid "ServiseID"
 msgstr "Військовослужбовець"
 
-#: .\osoba\models.py:75
+#: .\osoba\models.py:87
 msgid "ServiseIDs"
 msgstr "Військовослужбовці"
 
