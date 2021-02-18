@@ -78,7 +78,7 @@ class ServiseID(models.Model):
     image3x4 = models.BinaryField(blank=True, verbose_name= _('image3x4'))
     image_face3x4 = models.ImageField(upload_to=image_directory_path, blank=True, verbose_name= _('image_face3x4'))
     official_position = models.ForeignKey(OfficialPosition, on_delete=models.CASCADE, blank=True, verbose_name= _('official_position'))
-    
+    # інфо про призов 
     def __str__(self):
         return '{} {} {} {} {}'.format(self.unit.name, self.military_ranks.name, self.name ,self.sename, self.third_name)
 

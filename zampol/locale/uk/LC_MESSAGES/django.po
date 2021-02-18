@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-18 14:42+0300\n"
+"POT-Creation-Date: 2021-02-18 15:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,20 +85,16 @@ msgid "birth date"
 msgstr "Дата народження"
 
 #: .\osoba\models.py:74
-#, fuzzy
-#| msgid "Military Rank"
 msgid "military rank"
 msgstr "Військове звання"
 
 #: .\osoba\models.py:76
 msgid "unit"
-msgstr "Взод"
+msgstr "Рота"
 
 #: .\osoba\models.py:77
-#, fuzzy
-#| msgid "Platoon"
 msgid "platoon"
-msgstr "Рота"
+msgstr "Взвод"
 
 #: .\osoba\models.py:78
 msgid "image3x4"
@@ -109,9 +105,7 @@ msgid "image_face3x4"
 msgstr "Фотокартка 3 на 4"
 
 #: .\osoba\models.py:80
-#, fuzzy
-#| msgid "Official Position"
-msgid "official position"
+msgid "official_position"
 msgstr "Посада"
 
 #: .\osoba\models.py:86
