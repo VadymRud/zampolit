@@ -48,6 +48,38 @@ class Company(models.Model):
         verbose_name_plural = _('Company')
 
 
+class Creed(models.Model):
+    name = models.CharField(max_length=512, verbose_name= _('Name'))
+    
+    def __str__(self):
+        return self.name[:50]
+    
+    class Meta:
+        verbose_name = _('Creed')
+        verbose_name_plural = _('Creed')
+
+
+class Nationality(models.Model):
+    name = models.CharField(max_length=512, verbose_name= _('Name'))
+    
+    def __str__(self):
+        return self.name[:50]
+    
+    class Meta:
+        verbose_name = _('Nationality')
+        verbose_name_plural = _('Nationalities')
+
+
+class Education(models.Model):
+    name = models.CharField(max_length=512, verbose_name= _('Name'))
+    
+    def __str__(self):
+        return self.name[:50]
+    
+    class Meta:
+        verbose_name = _('Education')
+        verbose_name_plural = _('Education')
+
 
 class OfficialPosition(models.Model):
     name = models.CharField(max_length=512, verbose_name= _('Name'))
@@ -78,7 +110,26 @@ class ServiseID(models.Model):
     image3x4 = models.BinaryField(blank=True, verbose_name= _('image3x4'))
     image_face3x4 = models.ImageField(upload_to=image_directory_path, blank=True, verbose_name= _('image_face3x4'))
     official_position = models.ForeignKey(OfficialPosition, on_delete=models.CASCADE, blank=True, verbose_name= _('official_position'))
-    # інфо про призов 
+    # інфо про призов
+    military_office = models.CharField(max_length=1024, verbose_name= _('Military office'), blank=True, null=True)
+    date_of_conscription = models.DateField(verbose_name= _('date of conscription'), blank=True, null=True)
+    order_date = models.DateField(verbose_name= _('order date'), blank=True, null=True)
+    order_number = models.CharField(max_length=100, verbose_name= _('order number'), blank=True, null=True)
+    # загальна інформація
+    militaryID_seria = models.CharField(max_length=3, verbose_name= _('militaryID seria'), blank=True, null=True)
+    militaryID_number = models.CharField(max_length=10, verbose_name= _('militaryID number'), blank=True, null=True)
+    ipn = models.CharField(max_length=10, verbose_name= _('ipn'), blank=True, null=True)
+    orphan = models.BooleanField(_('orphan'), default=False, help_text=_('orphan'))
+    married  = models.BooleanField(_('married'), default=False)
+    halforphan  = models.BooleanField(_('halforphan'), default=False)
+    work = models.BooleanField(_('work'), default=False)
+    mobilization  = models.BooleanField(_('mobilization'), default=False)
+    driveid  = models.BooleanField(_('driveid'), default=False)
+    creed = models.ForeignKey(Creed, on_delete=models.CASCADE, blank=True, null =True, verbose_name= _('creed'))
+    nationality = models.ForeignKey(Nationality, on_delete=models.CASCADE, blank=True, null =True, verbose_name= _('nationality'))
+    education = models.ForeignKey(Education, on_delete=models.CASCADE, blank=True, null =True, verbose_name= _('Education'))
+    weapon =  models.CharField(max_length=1020, verbose_name= _('weapon'), blank=True, null=True)
+
     def __str__(self):
         return '{} {} {} {} {}'.format(self.unit.name, self.military_ranks.name, self.name ,self.sename, self.third_name)
 

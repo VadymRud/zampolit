@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8">
-  <title>Пример страницы</title>
-  <style>
-  p { color:  navy; }
-  </style>
- </head>
- <body>
-  <p>Страница на HTML5</p>
-  <img style="width:100%;" src="data:image/jpeg;base64,{{image_blob}}"/>
-  <script src="/static/jquery-3.5.1.min.js"></script>
- </body>
- 
-</html>
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}My Blog{% endblock %}
+
+{% block content %}
+{% trans "My Blog" as my_blog %}
+<h1>{{my_blog}} </h1>
+
+{% endblock %}

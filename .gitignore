@@ -131,3 +131,4 @@ zampol/.vscode/launch.json
 /.vscode
 zampol/images
 doc_templates/*
+zampol/media/images/*
