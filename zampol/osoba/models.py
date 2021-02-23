@@ -115,10 +115,23 @@ class ServiseID(models.Model):
     date_of_conscription = models.DateField(verbose_name= _('date of conscription'), blank=True, null=True)
     order_date = models.DateField(verbose_name= _('order date'), blank=True, null=True)
     order_number = models.CharField(max_length=100, verbose_name= _('order number'), blank=True, null=True)
-    # загальна інформація
+    # військовий квиток
     militaryID_seria = models.CharField(max_length=3, verbose_name= _('militaryID seria'), blank=True, null=True)
     militaryID_number = models.CharField(max_length=10, verbose_name= _('militaryID number'), blank=True, null=True)
+    who_militaryID = models.CharField(max_length=10, verbose_name= _('who_militaryID'), blank=True, null=True)
+    militaryID_date = models.DateField(verbose_name= _('militaryID_date'), blank=True, null=True)
+    weapon =  models.CharField(max_length=1020, verbose_name= _('weapon'), blank=True, null=True)
+    military_rank_id = models.CharField(max_length=1020, verbose_name= _('military_rank_id'), blank=True, null=True)
+    military_rank_date = models.DateField(verbose_name= _('military_rank_date'), blank=True, null=True)
+
+    # паспорт
+    ID_seria = models.CharField(max_length=3, verbose_name= _('ID seria'), blank=True, null=True)
+    ID_number = models.CharField(max_length=10, verbose_name= _('ID number'), blank=True, null=True)
+    who_ID = models.CharField(max_length=10, verbose_name= _('who_ID'), blank=True, null=True)
+    ID_date = models.DateField(verbose_name= _('ID_date'), blank=True, null=True)
     ipn = models.CharField(max_length=10, verbose_name= _('ipn'), blank=True, null=True)
+
+    # загальна інформація
     orphan = models.BooleanField(_('orphan'), default=False, help_text=_('orphan'))
     married  = models.BooleanField(_('married'), default=False)
     halforphan  = models.BooleanField(_('halforphan'), default=False)
@@ -128,7 +141,9 @@ class ServiseID(models.Model):
     creed = models.ForeignKey(Creed, on_delete=models.CASCADE, blank=True, null =True, verbose_name= _('creed'))
     nationality = models.ForeignKey(Nationality, on_delete=models.CASCADE, blank=True, null =True, verbose_name= _('nationality'))
     education = models.ForeignKey(Education, on_delete=models.CASCADE, blank=True, null =True, verbose_name= _('Education'))
-    weapon =  models.CharField(max_length=1020, verbose_name= _('weapon'), blank=True, null=True)
+    blood_type = models.CharField(max_length=3, verbose_name= _('blood_type'), blank=True, null=True)
+    rh = models.CharField(max_length=2, verbose_name= _('RH'), blank=True, null=True)
+
 
     def __str__(self):
         return '{} {} {} {} {}'.format(self.unit.name, self.military_ranks.name, self.name ,self.sename, self.third_name)

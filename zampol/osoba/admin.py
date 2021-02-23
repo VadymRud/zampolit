@@ -12,21 +12,30 @@ class ServiseIDAdmin(admin.ModelAdmin):
         (_('Main data'), {
             'fields': ('name', 'sename', 'third_name', 'birth_date')
         }),
+
         (_('Company'), {
             'fields': ('military_ranks', 'official_position', 'unit', 'platoon')
-
         }),
+
         (_('Info for Service begin'), {
             'fields': ('military_office', 'date_of_conscription', 'order_date', 'order_number')
-            
         }),
+
         (_('General information'), {
-            'fields': ('militaryID_seria', 'militaryID_number', 'ipn', 'orphan',
+            'fields': ('orphan',
             'married', 'halforphan', 'work', 'mobilization', 'driveid', 'creed',
-            'nationality', 'education', 'weapon')
-            
+            'nationality', 'education',  'blood_type', 'rh')
         }),
-        
+
+        (_('militaryID'), {
+            'fields': ('militaryID_seria', 'militaryID_number', 'who_militaryID',
+            'militaryID_date', 'weapon', 'military_rank_id', 'military_rank_date')
+        }),
+
+        (_('ID'), {
+            'fields': ('ID_seria', 'ID_number', 'who_ID',
+            'ID_date', 'ipn')
+        }),
         (_('Images'), {
             'fields': ('image_face3x4',)
             
