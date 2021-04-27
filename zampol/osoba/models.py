@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import gettext as _
 from django.conf.global_settings import STATIC_ROOT
 
+
 class MilitaryRank(models.Model):
     name = models.CharField(max_length=512, verbose_name= _('Name'))
     
@@ -13,7 +14,6 @@ class MilitaryRank(models.Model):
         verbose_name_plural = _('Military Ranks')
 
 
-
 class Platoon(models.Model):
     name = models.CharField(max_length=512, verbose_name= _('Name'))
     
@@ -23,7 +23,6 @@ class Platoon(models.Model):
     class Meta:
         verbose_name = _('Platoon')
         verbose_name_plural = _('Platoons')
-
 
 
 class Unit(models.Model):

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-23 06:58+0300\n"
+"POT-Creation-Date: 2021-04-27 22:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,8 @@ msgstr ""
 msgid "Main data"
 msgstr "Головна інформація"
 
-#: .\osoba\admin.py:16 .\osoba\models.py:47 .\osoba\models.py:48
+#: .\osoba\admin.py:16 .\osoba\models.py:46 .\osoba\models.py:47
+#: .\staff\models.py:19
 msgid "Company"
 msgstr "Підрозділ"
 
@@ -49,17 +50,24 @@ msgstr "Паспорт"
 msgid "Images"
 msgstr "Зображення"
 
-#: .\osoba\models.py:6 .\osoba\models.py:18 .\osoba\models.py:30
-#: .\osoba\models.py:41 .\osoba\models.py:52 .\osoba\models.py:63
-#: .\osoba\models.py:74 .\osoba\models.py:85
+#: .\osoba\apps.py:7
+#, fuzzy
+#| msgid "Name Person"
+msgid "Persons"
+msgstr "Ім'я В/С"
+
+#: .\osoba\models.py:7 .\osoba\models.py:18 .\osoba\models.py:29
+#: .\osoba\models.py:40 .\osoba\models.py:51 .\osoba\models.py:62
+#: .\osoba\models.py:73 .\osoba\models.py:84 .\relocation\models.py:8
+#: .\staff\models.py:7 .\staff\models.py:20
 msgid "Name"
 msgstr "Ім'я"
 
-#: .\osoba\models.py:12
+#: .\osoba\models.py:13
 msgid "Military Rank"
 msgstr "Військове звання"
 
-#: .\osoba\models.py:13
+#: .\osoba\models.py:14
 msgid "Military Ranks"
 msgstr "Військові звання"
 
@@ -73,191 +81,191 @@ msgstr "Рота"
 msgid "Platoons"
 msgstr "Роти"
 
-#: .\osoba\models.py:36
+#: .\osoba\models.py:35
 msgid "Unit"
 msgstr "Взвод"
 
-#: .\osoba\models.py:37
+#: .\osoba\models.py:36
 msgid "Units"
 msgstr "Взвода"
 
-#: .\osoba\models.py:58 .\osoba\models.py:59
+#: .\osoba\models.py:57 .\osoba\models.py:58
 msgid "Creed"
 msgstr "Віросповідання"
 
-#: .\osoba\models.py:69
+#: .\osoba\models.py:68
 msgid "Nationality"
 msgstr "Національність"
 
-#: .\osoba\models.py:70
+#: .\osoba\models.py:69
 msgid "Nationalities"
-msgstr "Ноціональності"
+msgstr "Національності"
 
-#: .\osoba\models.py:80 .\osoba\models.py:81 .\osoba\models.py:143
+#: .\osoba\models.py:79 .\osoba\models.py:80 .\osoba\models.py:142
 msgid "Education"
 msgstr "Освіта"
 
-#: .\osoba\models.py:86
+#: .\osoba\models.py:85 .\staff\models.py:13 .\staff\models.py:14
 msgid "SHPK"
 msgstr "ШПК"
 
-#: .\osoba\models.py:92
+#: .\osoba\models.py:91
 msgid "Official Position"
 msgstr "Посада"
 
-#: .\osoba\models.py:93
+#: .\osoba\models.py:92
 msgid "Official Positions"
 msgstr "Посади"
 
-#: .\osoba\models.py:102
+#: .\osoba\models.py:101
 msgid "Name Person"
 msgstr "Ім'я В/С"
 
-#: .\osoba\models.py:103
+#: .\osoba\models.py:102
 msgid "Sename"
 msgstr "Прізвище"
 
-#: .\osoba\models.py:104
+#: .\osoba\models.py:103
 msgid "third name"
 msgstr "По батькові"
 
-#: .\osoba\models.py:105
+#: .\osoba\models.py:104
 msgid "birth date"
 msgstr "Дата народження"
 
-#: .\osoba\models.py:106
+#: .\osoba\models.py:105
 msgid "military rank"
 msgstr "Військове звання"
 
-#: .\osoba\models.py:108
+#: .\osoba\models.py:107
 msgid "unit"
 msgstr "Взвод"
 
-#: .\osoba\models.py:109
+#: .\osoba\models.py:108
 msgid "platoon"
 msgstr "Рота"
 
-#: .\osoba\models.py:110
+#: .\osoba\models.py:109
 msgid "image3x4"
 msgstr ""
 
-#: .\osoba\models.py:111
+#: .\osoba\models.py:110
 msgid "image_face3x4"
 msgstr "Фотокартка 3 на 4"
 
-#: .\osoba\models.py:112
+#: .\osoba\models.py:111
 msgid "official_position"
 msgstr "Посада"
 
-#: .\osoba\models.py:114
+#: .\osoba\models.py:113
 msgid "Military office"
 msgstr "Військове звання"
 
-#: .\osoba\models.py:115
+#: .\osoba\models.py:114
 msgid "date of conscription"
 msgstr "Дата призову"
 
-#: .\osoba\models.py:116
+#: .\osoba\models.py:115
 msgid "order date"
 msgstr "Дата наказу"
 
-#: .\osoba\models.py:117
+#: .\osoba\models.py:116
 msgid "order number"
 msgstr "Номер наказу"
 
-#: .\osoba\models.py:119
+#: .\osoba\models.py:118
 msgid "militaryID seria"
 msgstr "Військовий квиток серія"
 
-#: .\osoba\models.py:120
+#: .\osoba\models.py:119
 msgid "militaryID number"
 msgstr "Військовий квиток номер"
 
-#: .\osoba\models.py:121
+#: .\osoba\models.py:120
 msgid "who_militaryID"
 msgstr "Хто видав Військовий квиток"
 
-#: .\osoba\models.py:122
+#: .\osoba\models.py:121
 msgid "militaryID_date"
 msgstr "Військовий квиток дата видачі"
 
-#: .\osoba\models.py:123
+#: .\osoba\models.py:122
 msgid "weapon"
 msgstr "Зброя"
 
-#: .\osoba\models.py:124
+#: .\osoba\models.py:123
 msgid "military_rank_id"
 msgstr "Присвоєння військового звання"
 
-#: .\osoba\models.py:125
+#: .\osoba\models.py:124
 msgid "military_rank_date"
 msgstr "Дата присвоєння військового звання"
 
-#: .\osoba\models.py:128
+#: .\osoba\models.py:127
 msgid "ID seria"
 msgstr "Паспорт серія"
 
-#: .\osoba\models.py:129
+#: .\osoba\models.py:128
 msgid "ID number"
 msgstr "Паспорт номер"
 
-#: .\osoba\models.py:130
+#: .\osoba\models.py:129
 msgid "who_ID"
 msgstr "Хто видав Паспорт"
 
-#: .\osoba\models.py:131
+#: .\osoba\models.py:130
 msgid "ID_date"
 msgstr "Паспорт дата видачі"
 
-#: .\osoba\models.py:132
+#: .\osoba\models.py:131
 msgid "ipn"
 msgstr "Індефікаційний код"
 
-#: .\osoba\models.py:135
+#: .\osoba\models.py:134
 msgid "orphan"
 msgstr "Сирота"
 
-#: .\osoba\models.py:136
+#: .\osoba\models.py:135
 msgid "married"
 msgstr "Одружений"
 
-#: .\osoba\models.py:137
+#: .\osoba\models.py:136
 msgid "halforphan"
 msgstr "Напівсирота"
 
-#: .\osoba\models.py:138
+#: .\osoba\models.py:137
 msgid "work"
 msgstr "Робота"
 
-#: .\osoba\models.py:139
+#: .\osoba\models.py:138
 msgid "mobilization"
 msgstr "Мобілізований"
 
-#: .\osoba\models.py:140
+#: .\osoba\models.py:139
 msgid "driveid"
 msgstr "Посвідчення водія"
 
-#: .\osoba\models.py:141
+#: .\osoba\models.py:140
 msgid "creed"
 msgstr "віросповідання"
 
-#: .\osoba\models.py:142
+#: .\osoba\models.py:141
 msgid "nationality"
 msgstr "нацаональність"
 
-#: .\osoba\models.py:144
+#: .\osoba\models.py:143
 msgid "blood_type"
 msgstr "Група крові"
 
-#: .\osoba\models.py:145
+#: .\osoba\models.py:144
 msgid "RH"
 msgstr "RH"
 
-#: .\osoba\models.py:152
+#: .\osoba\models.py:151
 msgid "ServiseID"
 msgstr "Військовослужбовець"
 
-#: .\osoba\models.py:153
+#: .\osoba\models.py:152
 msgid "ServiseIDs"
 msgstr "Військовослужбовці"
 
@@ -265,10 +273,45 @@ msgstr "Військовослужбовці"
 msgid "My Blog"
 msgstr "Мій блог"
 
-#: .\zampol\settings.py:122
+#: .\relocation\models.py:14
+msgid "Relocation"
+msgstr "Переміщення"
+
+#: .\relocation\models.py:15
+msgid "Relocation's"
+msgstr "Переміщення"
+
+#: .\staff\models.py:21
+msgid "shpk"
+msgstr "ШПК"
+
+#: .\staff\models.py:22
+msgid "ocoba"
+msgstr ""
+
+#: .\staff\models.py:23
+msgid "VOS"
+msgstr "ВОС"
+
+#: .\staff\models.py:24
+msgid "salary"
+msgstr "Оклад"
+
+#: .\staff\models.py:25
+msgid "tariff category"
+msgstr "Тарифний розряд"
+
+#: .\staff\models.py:31 .\staff\models.py:32
+msgid "Staff"
+msgstr "Штатка"
+
+#: .\zampol\settings.py:124
 msgid "English"
 msgstr "Англійська"
 
-#: .\zampol\settings.py:123
+#: .\zampol\settings.py:125
 msgid "Українська"
 msgstr "Українська"
+
+#~ msgid "Staffs"
+#~ msgstr "Штатка"
