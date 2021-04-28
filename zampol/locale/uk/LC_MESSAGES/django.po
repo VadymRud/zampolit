@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-27 22:23+0300\n"
+"POT-Creation-Date: 2021-04-28 00:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,10 +51,8 @@ msgid "Images"
 msgstr "Зображення"
 
 #: .\osoba\apps.py:7
-#, fuzzy
-#| msgid "Name Person"
 msgid "Persons"
-msgstr "Ім'я В/С"
+msgstr "Військовослужбовці"
 
 #: .\osoba\models.py:7 .\osoba\models.py:18 .\osoba\models.py:29
 #: .\osoba\models.py:40 .\osoba\models.py:51 .\osoba\models.py:62
@@ -281,6 +279,10 @@ msgstr "Переміщення"
 msgid "Relocation's"
 msgstr "Переміщення"
 
+#: .\staff\apps.py:7 .\staff\models.py:31 .\staff\models.py:32
+msgid "Staff"
+msgstr "Штатка"
+
 #: .\staff\models.py:21
 msgid "shpk"
 msgstr "ШПК"
@@ -300,10 +302,6 @@ msgstr "Оклад"
 #: .\staff\models.py:25
 msgid "tariff category"
 msgstr "Тарифний розряд"
-
-#: .\staff\models.py:31 .\staff\models.py:32
-msgid "Staff"
-msgstr "Штатка"
 
 #: .\zampol\settings.py:124
 msgid "English"
