@@ -12,9 +12,9 @@ class Relocation(models.Model):
     to_staff = models.ForeignKey(Staff, on_delete=models.CASCADE, blank=True, verbose_name=_('to staff'),
                                    related_name='tostaff')
     order_number = models.CharField(max_length=512, verbose_name=_('order number'))
-    order_date = models.DateField(verbose_name=_('order date'))
-    appruve = models.BooleanField(verbose_name=_('order number'))
-    appruve_date = models.DateField(verbose_name=_('appruve date'))
+    order_date = models.DateField(verbose_name=_('order date'), auto_now_add=True)
+    appruve = models.BooleanField(verbose_name=_('order number'), default=False)
+    appruve_date = models.DateField(verbose_name=_('appruve date'), auto_now_add=True)
     osoba = models.ForeignKey(ServiseID, on_delete=models.CASCADE, verbose_name= _('osoba'))
 
     def __str__(self):
