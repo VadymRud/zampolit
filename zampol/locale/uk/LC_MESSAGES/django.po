@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-28 00:05+0300\n"
+"POT-Creation-Date: 2021-04-29 17:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,8 +56,8 @@ msgstr "Військовослужбовці"
 
 #: .\osoba\models.py:7 .\osoba\models.py:18 .\osoba\models.py:29
 #: .\osoba\models.py:40 .\osoba\models.py:51 .\osoba\models.py:62
-#: .\osoba\models.py:73 .\osoba\models.py:84 .\relocation\models.py:8
-#: .\staff\models.py:7 .\staff\models.py:20
+#: .\osoba\models.py:73 .\osoba\models.py:84 .\relocation\models.py:9
+#: .\staff\models.py:7 .\staff\models.py:20 .\templates\staff\staff_list.html:5
 msgid "Name"
 msgstr "Ім'я"
 
@@ -136,12 +136,12 @@ msgid "military rank"
 msgstr "Військове звання"
 
 #: .\osoba\models.py:107
-msgid "unit"
-msgstr "Взвод"
-
-#: .\osoba\models.py:108
 msgid "platoon"
 msgstr "Рота"
+
+#: .\osoba\models.py:108
+msgid "unit"
+msgstr "Взвод"
 
 #: .\osoba\models.py:109
 msgid "image3x4"
@@ -163,11 +163,11 @@ msgstr "Військове звання"
 msgid "date of conscription"
 msgstr "Дата призову"
 
-#: .\osoba\models.py:115
+#: .\osoba\models.py:115 .\relocation\models.py:15
 msgid "order date"
 msgstr "Дата наказу"
 
-#: .\osoba\models.py:116
+#: .\osoba\models.py:116 .\relocation\models.py:14 .\relocation\models.py:16
 msgid "order number"
 msgstr "Номер наказу"
 
@@ -267,41 +267,82 @@ msgstr "Військовослужбовець"
 msgid "ServiseIDs"
 msgstr "Військовослужбовці"
 
-#: .\osoba\templates\index.html:6
-msgid "My Blog"
-msgstr "Мій блог"
+#: .\relocation\models.py:10
+msgid "from staff"
+msgstr ""
 
-#: .\relocation\models.py:14
+#: .\relocation\models.py:12
+msgid "to staff"
+msgstr "З посади"
+
+#: .\relocation\models.py:17
+msgid "appruve date"
+msgstr "Дата прийому на службу"
+
+#: .\relocation\models.py:18
+msgid "osoba"
+msgstr "Військовослужбовець"
+
+#: .\relocation\models.py:24
 msgid "Relocation"
 msgstr "Переміщення"
 
-#: .\relocation\models.py:15
+#: .\relocation\models.py:25
 msgid "Relocation's"
 msgstr "Переміщення"
 
-#: .\staff\apps.py:7 .\staff\models.py:31 .\staff\models.py:32
+#: .\staff\apps.py:7 .\staff\models.py:32 .\staff\models.py:33
+#: .\templates\staff\staff_list.html:3
 msgid "Staff"
 msgstr "Штатка"
 
-#: .\staff\models.py:21
+#: .\staff\models.py:21 .\templates\staff\staff_list.html:6
 msgid "shpk"
 msgstr "ШПК"
 
 #: .\staff\models.py:22
 msgid "ocoba"
-msgstr ""
+msgstr "Військовослужбовець"
 
 #: .\staff\models.py:23
 msgid "VOS"
 msgstr "ВОС"
 
 #: .\staff\models.py:24
+msgid "pozyvnyy"
+msgstr "Позивний"
+
+#: .\staff\models.py:25 .\templates\staff\staff_list.html:10
 msgid "salary"
 msgstr "Оклад"
 
-#: .\staff\models.py:25
+#: .\staff\models.py:26
 msgid "tariff category"
 msgstr "Тарифний розряд"
+
+#: .\templates\staff\staff_list.html:4
+msgid "Npp"
+msgstr "Номер ПП"
+
+#: .\templates\staff\staff_list.html:7
+msgid "Osoba"
+msgstr "Військовослужбовець"
+
+#: .\templates\staff\staff_list.html:8
+msgid "vos"
+msgstr "ВОС"
+
+#: .\templates\staff\staff_list.html:9
+msgid "poz"
+msgstr "Позивний"
+
+#: .\templates\staff\staff_list.html:11
+msgid "Availability"
+msgstr "Наявність"
+
+#: .\templates\staff\staff_list.html:12
+msgid "Vacant"
+msgstr "Вакантна"
 
 #: .\zampol\settings.py:124
 msgid "English"
@@ -310,6 +351,9 @@ msgstr "Англійська"
 #: .\zampol\settings.py:125
 msgid "Українська"
 msgstr "Українська"
+
+#~ msgid "My Blog"
+#~ msgstr "Мій блог"
 
 #~ msgid "Staffs"
 #~ msgstr "Штатка"

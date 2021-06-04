@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}My Blog11111111{% endblock %}
+
+{% block content %}
+111
+<h1>{{my_blog}} </h1>
+    {%for staff in context.staffs%}
+        {{staff.osoba.name}}111
+    {% endfor %}
+{% endblock %}

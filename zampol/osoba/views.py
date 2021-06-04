@@ -5,7 +5,7 @@ from .models import MilitaryRank, Platoon, ServiseID, Unit
 
 
 class HomePageView(TemplateView):
-    template_name = 'index.html'
+    template_name = 'home/index.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
