@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields import TextField
 from django.utils.translation import gettext as _
 from django.conf.global_settings import STATIC_ROOT
 
@@ -101,6 +102,11 @@ class ServiseID(models.Model):
     name = models.CharField(max_length=512, verbose_name= _('Name Person'))
     sename = models.CharField(max_length=512, verbose_name= _('Sename'))
     third_name = models.CharField(max_length=512, verbose_name= _('third name'))
+    # В давальному відмінку
+    name_accs = models.CharField(max_length=512, verbose_name= _('Name Person in accs'), blank=True, null=True)
+    sename_accs = models.CharField(max_length=512, verbose_name= _('Sename in accs'), blank=True, null=True)
+    third_name_accs = models.CharField(max_length=512, verbose_name= _('third name  in accs'), blank=True, null=True)
+    
     birth_date = models.DateField(verbose_name= _('birth date'))
     military_ranks = models.ForeignKey(MilitaryRank, on_delete=models.CASCADE, verbose_name= _('military rank'))
     # company = models.ForeignKey(Company, on_delete=models.CASCADE, verbose_name= _('company'))
@@ -142,7 +148,11 @@ class ServiseID(models.Model):
     education = models.ForeignKey(Education, on_delete=models.CASCADE, blank=True, null =True, verbose_name= _('Education'))
     blood_type = models.CharField(max_length=3, verbose_name= _('blood_type'), blank=True, null=True)
     rh = models.CharField(max_length=2, verbose_name= _('RH'), blank=True, null=True)
-
+    #адреси проживання
+    #прописка
+    addres_pr = models.TextField(verbose_name= _('addres_pr'), blank=True, null=True)
+    #фактична
+    addres_fact = models.TextField(verbose_name= _('addres_fact'), blank=True, null=True)
 
     def __str__(self):
         return '{} {} {} {} {}'.format(self.unit.name, self.military_ranks.name, self.name ,self.sename, self.third_name)

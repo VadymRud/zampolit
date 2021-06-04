@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, View
+from django.http import JsonResponse
 from base64 import b64encode
 from .models import MilitaryRank, Platoon, ServiseID, Unit
 
@@ -13,5 +14,13 @@ class HomePageView(TemplateView):
         # context['image_blob'] = b64encode(ServiseID.objects.get(id=2).image3x4).decode()
         return context
 
+
+class AjaxNameInAccs(View):
+    def post(self, request):
+        username = request.GET.get('username', None)
+        data = {
+            'is_present': 'hhhhh'
+        }
+        return JsonResponse(data)
 
 

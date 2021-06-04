@@ -2,3 +2,5 @@ django
 docxtpl
 django-extensions
 Pillow
+pymorphy2
+pymorphy2-dicts-uk

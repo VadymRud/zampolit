@@ -12,7 +12,9 @@ class ServiseIDAdmin(admin.ModelAdmin):
         (_('Main data'), {
             'fields': ('name', 'sename', 'third_name', 'birth_date')
         }),
-
+        (_('Names in accs'), { #давальний відмінок
+            'fields': ('name_accs', 'sename_accs', 'third_name_accs')
+        }),
         (_('Company'), {
             'fields': ('military_ranks', 'official_position', 'unit', 'platoon')
         }),
@@ -36,11 +38,17 @@ class ServiseIDAdmin(admin.ModelAdmin):
             'fields': ('ID_seria', 'ID_number', 'who_ID',
             'ID_date', 'ipn')
         }),
+        
+        (_('Address'), {
+            'fields': ('addres_pr', 'addres_fact')
+            
+        }),
         (_('Images'), {
             'fields': ('image_face3x4',)
             
         })
     )
+    change_form_template = 'admin/ocoba_change_form.html'
 
 
 admin.site.register(Company)

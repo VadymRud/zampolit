@@ -11,8 +11,8 @@ class Status(models.Model):
         return self.name[:50]
 
     class Meta:
-        verbose_name = _('Description')
-        verbose_name_plural = _('Descriptions')
+        verbose_name = _('Status')
+        verbose_name_plural = _('Statuses')
 
 
 class Relocation(models.Model):
