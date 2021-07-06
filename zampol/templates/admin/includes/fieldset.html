@@ -24,7 +24,7 @@
                         <div class="help">{{ field.field.help_text|safe }}</div>
                     {% endif %}
                     {%if field.field.name == "name_accs" %}
-                    <button id="name_accs_btn">hhhhh</button>
+                    <button id="name_accs_btn" onclick="get_accs('name_accs_btn'); return false;">hhhhh</button>
                     {%endif%}
                 </div>
             {% endfor %}
@@ -32,8 +32,3 @@
     {% endfor %}
     
 </fieldset>
-{% block javascript %}
-<script src="{% static 'osoba/ajax_get_accs.js' %}">
-            
-</script>
-{% endblock javascript%}

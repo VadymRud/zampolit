@@ -17,6 +17,7 @@ class MilitaryRank(models.Model):
 
 class Platoon(models.Model):
     name = models.CharField(max_length=512, verbose_name= _('Name'))
+    priorety = models.SmallIntegerField(verbose_name= _('Name'), default=1)
     
     def __str__(self):
         return self.name[:50]
@@ -160,3 +161,6 @@ class ServiseID(models.Model):
     class Meta:
         verbose_name = _('ServiseID')
         verbose_name_plural = _('ServiseIDs')
+
+
+
