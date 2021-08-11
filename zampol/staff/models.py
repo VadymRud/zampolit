@@ -14,6 +14,21 @@ class SHPK(models.Model):
         verbose_name_plural = _('SHPK')
 
 
+
+class ZvannyaName(models.Model):
+    zv_id = models.AutoField(primary_key=True)
+    zv_name = models.TextField()
+    zv_short_name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return '{}__{}'.format(self.zv_id, self.zv_name)
+
+    class Meta:
+        managed = False
+        db_table = 'zvannya_name'
+
+
+
 class Staff(models.Model):
     # Штатка
     company = models.ForeignKey(Company, on_delete=models.CASCADE, blank=True, verbose_name= _('Company'))
@@ -95,11 +110,28 @@ class PosadaName(models.Model):
         db_table = 'posada_name'
 
 
+class PidrozdilName(models.Model):
+    p_id = models.AutoField(primary_key=True)
+    por_nomer = models.IntegerField()
+    p_name = models.TextField()
+    p_short_name = models.CharField(max_length=32)
+    p_full_name = models.CharField(max_length=200)
+    active = models.IntegerField()
+
+    def __str__(self):
+        return '{}__{}'.format(self.p_id, self.p_name[:50])
+
+    class Meta:
+        managed = False
+        db_table = 'pidrozdil_name'
+
+
+
 class Shtatka(models.Model):
     pos_id = models.AutoField(primary_key=True)
-    p = models.ForeignKey(PosadaName, to_field='pos_id', on_delete=models.PROTECT, related_name='+' )
-    sh_id = models.IntegerField()
-    zv_sh_id = models.IntegerField()
+    p = models.ForeignKey(PidrozdilName, to_field='p_id', on_delete=models.PROTECT, related_name='+' )
+    sh = models.ForeignKey(PosadaName, to_field='pos_id', on_delete=models.PROTECT, related_name='+' )
+    zv_sh = models.ForeignKey(ZvannyaName, to_field='zv_id', on_delete=models.PROTECT, related_name='+' )
     dopusk = models.CharField(max_length=1)
     vos = models.CharField(max_length=12)
     oklad = models.CharField(max_length=12)
@@ -111,21 +143,8 @@ class Shtatka(models.Model):
         db_table = 'shtatka'
 
     def __str__(self):
-        return '{}__{}'.format(self.pos_id, self.p)
+        return '{}__{}'.format(self.pos_id, self.sh)
 
-
-
-class ZvannyaName(models.Model):
-    zv_id = models.AutoField(primary_key=True)
-    zv_name = models.TextField()
-    zv_short_name = models.CharField(max_length=20)
-
-    def __str__(self):
-        return '{}__{}'.format(self.zv_id, self.zv_name)
-
-    class Meta:
-        managed = False
-        db_table = 'zvannya_name'
 
 
 class OsvitaName(models.Model):
@@ -151,6 +170,30 @@ class SimStanName(models.Model):
     class Meta:
         managed = False
         db_table = 'sim_stan_name'
+
+
+class StatsName(models.Model):
+    s_stats_name_id = models.AutoField(primary_key=True)
+    s_stats_name = models.CharField(max_length=1)
+
+    def __str__(self):
+        return '{}__{}'.format(self.s_stats_name_id, self.s_stats_name)
+
+    class Meta:
+        managed = False
+        db_table = 'stats_name'
+
+
+class StatusName(models.Model):
+    s_id = models.AutoField(primary_key=True)
+    s_name = models.CharField(max_length=128)
+
+    def __str__(self):
+        return '{}__{}'.format(self.s_id, self.s_name)
+
+    class Meta:
+        managed = False
+        db_table = 'status_name'
 
 
 class Name(models.Model):
@@ -192,8 +235,8 @@ class Name(models.Model):
     ozdor = models.CharField(max_length=50)
     mdspp = models.CharField(max_length=50)
     sim_stan = models.ForeignKey(SimStanName, to_field='s_stan_name_id', on_delete=models.PROTECT, related_name='+' )
-    stats = models.IntegerField()
-    status = models.IntegerField()
+    stats = models.ForeignKey(StatsName, to_field='s_stats_name_id', on_delete=models.PROTECT, related_name='+' )
+    status = models.ForeignKey(StatusName, to_field='s_id', on_delete=models.PROTECT, related_name='+' )
     status2 = models.IntegerField()
     notes = models.TextField()
     notes1 = models.TextField()
@@ -239,19 +282,6 @@ class PidrozdilId(models.Model):
     class Meta:
         managed = False
         db_table = 'pidrozdil_id'
-
-
-class PidrozdilName(models.Model):
-    p_id = models.AutoField(primary_key=True)
-    por_nomer = models.IntegerField()
-    p_name = models.TextField()
-    p_short_name = models.CharField(max_length=32)
-    p_full_name = models.CharField(max_length=200)
-    active = models.IntegerField()
-
-    class Meta:
-        managed = False
-        db_table = 'pidrozdil_name'
 
 
 
@@ -337,24 +367,6 @@ class ShtatkaOld2(models.Model):
     class Meta:
         managed = False
         db_table = 'shtatka_old_2'
-
-
-class StatsName(models.Model):
-    s_stats_name_id = models.AutoField(primary_key=True)
-    s_stats_name = models.CharField(max_length=1)
-
-    class Meta:
-        managed = False
-        db_table = 'stats_name'
-
-
-class StatusName(models.Model):
-    s_id = models.AutoField(primary_key=True)
-    s_name = models.CharField(max_length=128)
-
-    class Meta:
-        managed = False
-        db_table = 'status_name'
 
 
 class Table32(models.Model):

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from osoba.views import HomePageView
-from staff.views import StaffListView, StaffDetailView
+from staff.views import StaffListView, StaffDetailView, PidrozdilNameView, ShtatkaView
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -25,6 +25,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', HomePageView.as_view(), name='home'),
-    path('staff/', StaffListView.as_view(), name='staff_index'),
+    path('staff/', ShtatkaView.as_view(), name='staff_index'),
 
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

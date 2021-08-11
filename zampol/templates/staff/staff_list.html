@@ -3,7 +3,10 @@
 
 
 {% block content %}
-    {% translate  "Staff" as staff %}
+    {% for pidroz in object_list %} 
+        {{pidroz.p_name}} <br />
+    {% endfor %}
+    {% comment %} {% translate  "Staff" as staff %}
     {% translate "Npp" as npp %}
     {% translate "Name" as name %}
     {% translate "shpk" as shpk %}
@@ -50,6 +53,6 @@
 
 {% endfor %}
 </tbody>
-</table>
+</table> {% endcomment %}
 
 {% endblock %}
