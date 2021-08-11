@@ -133,3 +133,6 @@ zampol/images
 doc_templates/*
 zampol/media/images/*
 zampol/.idea
+Lib
+Scripts
+Include

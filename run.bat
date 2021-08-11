@@ -1,0 +1,1 @@
+.\Scripts\python.exe zampol\manage.py runserver

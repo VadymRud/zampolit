@@ -152,3 +152,5 @@ STATICFILES_DIRS  = [
 STATIC_ROOT = BASE_DIR / "media"
 
 DOC_TEMPLATES = BASE_DIR / "doc_templates"
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
