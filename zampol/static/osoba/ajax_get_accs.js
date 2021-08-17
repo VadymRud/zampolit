@@ -21,3 +21,7 @@ function get_accs(btn){
 //     // });
 //    return false;
 //});
+
+$(function() {
+    $('#id_birth_date').datepicker( "option", "yearRange", "2002:2012" );
+});

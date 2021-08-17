@@ -2,10 +2,12 @@ from django.db import models
 from django.db.models.fields import TextField
 from django.utils.translation import gettext as _
 from django.conf.global_settings import STATIC_ROOT
+from django import forms
 
 
 class MilitaryRank(models.Model):
     name = models.CharField(max_length=512, verbose_name= _('Name'))
+    short_name = models.CharField(max_length=512, verbose_name=_('Short name'))
     
     def __str__(self):
         return self.name[:50]
@@ -161,6 +163,6 @@ class ServiseID(models.Model):
     class Meta:
         verbose_name = _('ServiseID')
         verbose_name_plural = _('ServiseIDs')
-
+       
 
 

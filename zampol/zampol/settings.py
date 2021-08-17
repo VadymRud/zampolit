@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'django.forms',
     'osoba',
     'relocation',
     'staff',
+    'bootstrap_datepicker_plus',
  
 ]
 
@@ -56,13 +58,13 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
 
 ]
-
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 ROOT_URLCONF = 'zampol.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates', ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,7 +86,7 @@ WSGI_APPLICATION = 'zampol.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'zampol.sqlite',
+        'NAME': BASE_DIR / 'db_zamp.sqlite3',
         # 'ENGINE': 'django.db.backends.mysql',
         # 'NAME': 'zampol',
         # 'USER': 'root',
@@ -154,3 +156,7 @@ STATIC_ROOT = BASE_DIR / "media"
 DOC_TEMPLATES = BASE_DIR / "doc_templates"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}

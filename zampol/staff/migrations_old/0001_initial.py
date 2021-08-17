@@ -28,7 +28,6 @@ class Migration(migrations.Migration):
             name='Staff',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('unic', models.PositiveBigIntegerField(blank=True, verbose_name='govno')),
                 ('name', models.CharField(max_length=512, verbose_name="Ім'я")),
                 ('vos', models.CharField(max_length=512, verbose_name='ВОС')),
                 ('poz', models.CharField(blank=True, max_length=512, verbose_name='pozyvnyy')),

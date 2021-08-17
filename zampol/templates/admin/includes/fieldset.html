@@ -1,4 +1,3 @@
-{% load static %}
 <fieldset class="module aligned {{ fieldset.classes }}">
     {% if fieldset.name %}<h2>{{ fieldset.name }}</h2>{% endif %}
     {% if fieldset.description %}
@@ -7,7 +6,7 @@
     {% for line in fieldset %}
         <div class="form-row{% if line.fields|length_is:'1' and line.errors %} errors{% endif %}{% if not line.has_visible_field %} hidden{% endif %}{% for field in line %}{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% endfor %}">
             {% if line.fields|length_is:'1' %}{{ line.errors }}{% endif %}
-            {% for field in line %}{{ field.field.name }}
+            {% for field in line %}
                 <div{% if not line.fields|length_is:'1' %} class="fieldBox{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% if not field.is_readonly and field.errors %} errors{% endif %}{% if field.field.is_hidden %} hidden{% endif %}"{% elif field.is_checkbox %} class="checkbox-row"{% endif %}>
                     {% if not line.fields|length_is:'1' and not field.is_readonly %}{{ field.errors }}{% endif %}
                     {% if field.is_checkbox %}
@@ -23,12 +22,8 @@
                     {% if field.field.help_text %}
                         <div class="help">{{ field.field.help_text|safe }}</div>
                     {% endif %}
-                    {%if field.field.name == "name_accs" %}
-                    <button id="name_accs_btn" onclick="get_accs('name_accs_btn'); return false;">hhhhh</button>
-                    {%endif%}
                 </div>
             {% endfor %}
         </div>
     {% endfor %}
-    
-</fieldset>
+</fieldset> 

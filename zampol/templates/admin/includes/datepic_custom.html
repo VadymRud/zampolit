@@ -1,0 +1,11 @@
+{% load static %}
+{% include "django/forms/widgets/input.html" %}
+<script src="{% static 'dist/js/bootstrap-datepicker.min.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'dist/css/bootstrap-datepicker.min.css' %}">
+<script>
+  $(function () {
+    $("input[name='{{ widget.name }}']").datepicker({
+      startView:
+    });
+  });
+</script>

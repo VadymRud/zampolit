@@ -1,7 +1,10 @@
 from django.contrib import admin
+from django.db import models
 from django.utils.translation import gettext as _
 from .models import (MilitaryRank, Platoon, ServiseID, Unit, OfficialPosition, Company, 
                     Education, Creed, Nationality)
+from osoba.widgets import CustomDatePickerInput
+from bootstrap_datepicker_plus import MonthPickerInput
 
 
 class ServiseIDAdmin(admin.ModelAdmin):
@@ -49,6 +52,9 @@ class ServiseIDAdmin(admin.ModelAdmin):
         })
     )
     change_form_template = 'admin/ocoba_change_form.html'
+    # formfield_overrides = {
+    #         models.DateField: {'widget': MonthPickerInput}
+    #     }
 
 
 admin.site.register(Company)

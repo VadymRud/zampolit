@@ -128,7 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 zampol/.vscode/launch.json
-/.vscode
+.vscode
 zampol/images
 doc_templates/*
 zampol/media/images/*

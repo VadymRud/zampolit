@@ -5,6 +5,7 @@ from django.utils.translation import gettext as _
 
 class SHPK(models.Model):
     name = models.CharField(max_length=512, verbose_name=_('Name'))
+    short_name = models.CharField(max_length=512, verbose_name=_('Short name'))
 
     def __str__(self):
         return self.name[:50]
@@ -31,6 +32,8 @@ class ZvannyaName(models.Model):
 
 class Staff(models.Model):
     # Штатка
+    #порядковий номер в штатці
+    unicum = models.PositiveBigIntegerField(verbose_name= _('Unic number'), blank=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, blank=True, verbose_name= _('Company'))
     name = models.CharField(max_length=512, verbose_name=_('Name'))
     shpk = models.ForeignKey(SHPK, on_delete=models.CASCADE, blank=True, verbose_name= _('shpk'))
