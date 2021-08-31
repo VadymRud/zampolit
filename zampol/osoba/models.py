@@ -41,7 +41,9 @@ class Unit(models.Model):
     
 
 class Company(models.Model):
+    unik = models.PositiveBigIntegerField(verbose_name= _('Unic number'), blank=True)
     name = models.CharField(max_length=512, verbose_name= _('Name'))
+    short_name = models.CharField(max_length=512, verbose_name=_('Short name'))
     
     def __str__(self):
         return self.name[:50]
@@ -113,11 +115,11 @@ class ServiseID(models.Model):
     birth_date = models.DateField(verbose_name= _('birth date'))
     military_ranks = models.ForeignKey(MilitaryRank, on_delete=models.CASCADE, verbose_name= _('military rank'))
     # company = models.ForeignKey(Company, on_delete=models.CASCADE, verbose_name= _('company'))
-    platoon = models.ForeignKey(Platoon, on_delete=models.CASCADE, blank=True, verbose_name= _('platoon'), null=True)
-    unit = models.ForeignKey(Unit, on_delete=models.CASCADE, blank=True, verbose_name= _('unit'), null=True)
+    #platoon = models.ForeignKey(Platoon, on_delete=models.CASCADE, blank=True, verbose_name= _('platoon'), null=True)
+    #unit = models.ForeignKey(Unit, on_delete=models.CASCADE, blank=True, verbose_name= _('unit'), null=True)
     image3x4 = models.BinaryField(blank=True, verbose_name= _('image3x4'))
     image_face3x4 = models.ImageField(upload_to=image_directory_path, blank=True, verbose_name= _('image_face3x4'))
-    official_position = models.ForeignKey(OfficialPosition, on_delete=models.CASCADE, blank=True, verbose_name= _('official_position'))
+    # official_position = models.ForeignKey(OfficialPosition, on_delete=models.CASCADE, blank=True, verbose_name= _('official_position'))
     # інфо про призов
     military_office = models.CharField(max_length=1024, verbose_name= _('Military office'), blank=True, null=True)
     date_of_conscription = models.DateField(verbose_name= _('date of conscription'), blank=True, null=True)
@@ -158,7 +160,8 @@ class ServiseID(models.Model):
     addres_fact = models.TextField(verbose_name= _('addres_fact'), blank=True, null=True)
 
     def __str__(self):
-        return '{} {} {} {} {}'.format(self.unit.name, self.military_ranks.name, self.name ,self.sename, self.third_name)
+        return '{} {} {} {}'.format(str(self.military_ranks.name), str(self.name),
+                                    str(self.sename), str(self.third_name))
 
     class Meta:
         verbose_name = _('ServiseID')

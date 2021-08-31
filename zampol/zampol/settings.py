@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'osoba',
     'relocation',
     'staff',
-    'bootstrap_datepicker_plus',
+    'order',
  
 ]
 

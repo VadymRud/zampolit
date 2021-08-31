@@ -1,18 +1,21 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, View
+from django.views.generic import TemplateView, View, ListView
 from django.http import JsonResponse
 from base64 import b64encode
 from .models import MilitaryRank, Platoon, ServiseID, Unit
+from staff.models import Staff, Company
 
 
-class HomePageView(TemplateView):
+class HomePageView(ListView):
     template_name = 'home/index.html'
+    def get_queryset(self):
+        return Company.objects.order_by('unik')
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['staffs'] = Staff.objects.order_by('unicum')
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['image_blob'] = 1
-        # context['image_blob'] = b64encode(ServiseID.objects.get(id=2).image3x4).decode()
-        return context
+    #     # context['image_blob'] = b64encode(ServiseID.objects.get(id=2).image3x4).decode()
+    #     return context
 
 
 class AjaxNameInAccs(View):

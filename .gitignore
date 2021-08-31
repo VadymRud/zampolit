@@ -136,3 +136,5 @@ zampol/.idea
 Lib
 Scripts
 Include
+*.sqlite3
+*.sqlite

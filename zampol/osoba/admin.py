@@ -19,7 +19,7 @@ class ServiseIDAdmin(admin.ModelAdmin):
             'fields': ('name_accs', 'sename_accs', 'third_name_accs')
         }),
         (_('Company'), {
-            'fields': ('military_ranks', 'official_position', 'unit', 'platoon')
+            'fields': ('military_ranks', )
         }),
 
         (_('Info for Service begin'), {
