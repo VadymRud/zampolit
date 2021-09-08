@@ -19,6 +19,7 @@ from osoba.views import HomePageView
 from staff.views import StaffListView, StaffDetailView, PidrozdilNameView, ShtatkaView
 from django.conf.urls.static import static
 from django.conf import settings
+from order.views import GetDocumentProbaAJAX
 
 
 urlpatterns = [
@@ -26,5 +27,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('', HomePageView.as_view(), name='home'),
     path('staff/', ShtatkaView.as_view(), name='staff_index'),
+    path('ajax/getdocoment/proba', GetDocumentProbaAJAX.as_view(), name='ajax_proba'),
 
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

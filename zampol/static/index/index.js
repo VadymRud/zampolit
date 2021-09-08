@@ -1,24 +1,17 @@
-$(function() {
-    $.contextMenu({
-        selector: '.context-menu-one', 
-        callback: function(key, options) {
-            var m = "clicked: " + key;
-            window.console && console.log(m) || alert(m); 
+function getDocumentAjax(id){
+    csrftoken = $("input[name='csrfmiddlewaretoken']").val();
+    //alert(id+"__"+csrftoken);
+    data= {id_osoba: id};
+    $.ajax({
+        url: "/ajax/getdocoment/proba",
+        data : data,
+        method : 'POST',
+        headers: {
+                      'X-CSRFToken': csrftoken 
+                 },
+        success: function (data) {
+            alert(data.result)
         },
-        items: {
-            "edit": {name: "Edit", icon: "edit"},
-            "cut": {name: "Cut", icon: "cut"},
-            copy: {name: "Copy", icon: "copy"},
-            "paste": {name: "Paste", icon: "paste"},
-            "delete": {name: "Delete", icon: "delete"},
-            "sep1": "---------",
-            "quit": {name: "Quit", icon: function(){
-                return 'context-menu-icon context-menu-icon-quit';
-            }}
-        }
-    });
-
-    $('.context-menu-one').on('click', function(e){
-        console.log('clicked', this);
-    })    
-});
+        error: function (data) {concole.log(data)}
+  });
+}

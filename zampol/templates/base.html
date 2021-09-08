@@ -11,6 +11,7 @@
     
     </head>
     <body>
+        {% csrf_token %}
         <div id="content">
         {% comment %} <input type="date"> {% endcomment %}
             {% block content %}
