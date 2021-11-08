@@ -1,9 +1,9 @@
-function getDocumentAjax(id){
+function getDocumentF5Ajax(id){
     csrftoken = $("input[name='csrfmiddlewaretoken']").val();
     //alert(id+"__"+csrftoken);
-    data= {id_osoba: id};
+    data= {id_staff: id};
     $.ajax({
-        url: "/ajax/getdocoment/proba",
+        url: "/ajax/getdocoment/f5",
         data : data,
         method : 'POST',
         headers: {

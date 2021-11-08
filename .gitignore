@@ -142,3 +142,5 @@ zampol2/template/words/*
 zampol2/.vscode/launch.json
 zampol2/media/images/*
 zampol2/.idea
+*.suo
+zampol/.vs/VSWorkspaceState.json

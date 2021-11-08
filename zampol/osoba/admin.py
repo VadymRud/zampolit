@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.db import models
 from django.utils.translation import gettext as _
 from .models import (MilitaryRank, Platoon, ServiseID, Unit, OfficialPosition, Company, 
-                    Education, Creed, Nationality)
+                    Education, Creed, Nationality, Command)
 from osoba.widgets import CustomDatePickerInput
 from bootstrap_datepicker_plus import MonthPickerInput
 
@@ -66,3 +66,4 @@ admin.site.register(OfficialPosition)
 admin.site.register(Creed)
 admin.site.register(Nationality)
 admin.site.register(Education)
+admin.site.register(Command)

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'relocation',
     'staff',
     'order',
+    'reward',
  
 ]
 

@@ -168,4 +168,27 @@ class ServiseID(models.Model):
         verbose_name_plural = _('ServiseIDs')
        
 
+class Command(models.Model):
+    CHOICES = (
+        ('KB', _('Battalion commander')),
+        ('ZKB', _('Deputy Battalion Commander')),
+        ('ZKBMPZ', _('Deputy Battalion Commander for Moral and Psychological Support')),
+        ('PKBZPR', _('Assistant Battalion Commander for Legal Affairs')),
+        ('OP', _('Officer-psychologist')),
+        ('GSVCH', _('Chief sergeant of a military unit')),
+        ('Tehnic', _('Technician')),
+        ('ZKBPDP', _('Deputy Battalion Commander for Airborne Training')),
+        ('ZKBNSH', _('Chief of Staff - First Deputy Battalion Commander')), 
+        ('SPZKISCH', _('Senior assistant chief of staff for personnel and military units')),
+    )
+    name = models.CharField(max_length=512, choices=CHOICES, verbose_name= _('Name Command'))
+    person = models.ForeignKey(ServiseID, on_delete=models.CASCADE, verbose_name= _('Name Person'))
+    temporarily = models.PositiveSmallIntegerField(default=0,  verbose_name= _('TVO'))
+    
+    def __str__(self):
+        return '{} {} {} {}'.format(str(self.get_name_display()), str(self.person.name),
+                                    str(self.person.sename), str(self.person.third_name))
 
+    class Meta:
+        verbose_name = _('Command')
+        verbose_name_plural = _('Commands')
