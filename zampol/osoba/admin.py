@@ -4,7 +4,6 @@ from django.utils.translation import gettext as _
 from .models import (MilitaryRank, Platoon, ServiseID, Unit, OfficialPosition, Company, 
                     Education, Creed, Nationality, Command)
 from osoba.widgets import CustomDatePickerInput
-from bootstrap_datepicker_plus import MonthPickerInput
 
 
 class ServiseIDAdmin(admin.ModelAdmin):
