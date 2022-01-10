@@ -8,6 +8,7 @@ from docxtpl import DocxTemplate
 from pathlib import Path
 from django.conf import settings
 from staff.models import Staff
+from reward.models import Reward, Penalty, Interview
 import os
 from datetime import datetime, date
 
@@ -51,8 +52,40 @@ class GetDocumentF5AJAX(View):
         staff = Staff.objects.get(pk=request.POST.get('id_staff'))
         today = date.today()
         date_locale = formats.date_format(today, format='"d" E Y', use_l10n=True)
-        context = { 'military_rank' : staff.ocoba.military_ranks.name, 'sename':  str(staff.ocoba.sename).upper(),
-            'name':staff.ocoba.name, 'thname': staff.ocoba.third_name, 'date': date_locale}
-        get_doc_tpl(staff_id = request.POST.get('id_staff'), tpl_name= 'F5', ctx=context)
+        context = {'military_rank': staff.ocoba.military_ranks.name, 'sename': str(staff.ocoba.sename).upper(),
+                   'name': staff.ocoba.name, 'thname': staff.ocoba.third_name, 'date': date_locale}
+        get_doc_tpl(staff_id=request.POST.get('id_staff'), tpl_name='F5', ctx=context)
         pprint(request.POST.get('id_staff'))
+        return JsonResponse({'result': 'saved'})
+
+
+class GetDocumentSСCardAJAX(View):
+    def post(self, request):
+        print(request.POST.get('id_staff'))
+        staff = Staff.objects.get(pk=request.POST.get('id_staff'))
+        rewards = Reward.objects.filter(osoba=staff.ocoba)
+        penalties = Penalty.objects.filter(osoba=staff.ocoba)
+        today = date.today()
+        date_locale = formats.date_format(today, format='"d" E Y', use_l10n=True)
+        context = {'military_rank': staff.ocoba.military_ranks.name, 'sename': str(staff.ocoba.sename).upper(),
+                   'name': staff.ocoba.name, 'thname': staff.ocoba.third_name, 'date': date_locale,
+                   'pos_name': staff.name, 'rewards': rewards, 'penalties': penalties,
+                   'date_of_conscription': staff.ocoba.date_of_conscription.strftime('%d-%m-%Y')
+                   }
+        get_doc_tpl(staff_id=request.POST.get('id_staff'), tpl_name='СЛ_КАРТКА', ctx=context)
+        pprint(request.POST.get('id_staff'))
+        return JsonResponse({'result': 'saved'})
+
+
+class GetDocumentInterviewAJAX(View):
+    def post(self, request):
+        print(request.POST.get('id_staff'))
+        staff = Staff.objects.get(pk=request.POST.get('id_staff'))
+        interview = Interview.objects.filter(osoba=staff.ocoba)
+
+        today = date.today()
+        date_locale = formats.date_format(today, format='"d" E Y', use_l10n=True)
+        context = {'staff': staff, 'interviews': interview}
+        get_doc_tpl(staff_id=request.POST.get('id_staff'), tpl_name='АРКУШ_СПІВБЕСІД', ctx=context)
+        pprint(interview)
         return JsonResponse({'result': 'saved'})

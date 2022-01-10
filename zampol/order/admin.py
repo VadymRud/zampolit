@@ -1,16 +1,17 @@
 from django.contrib import admin
 from django.utils.translation import gettext as _
-from .models import StatusOrder, Order
+from .models import StatusOrder, Order, AllContract
 
 
 class OrderAdmin(admin.ModelAdmin):
     fieldsets = (
         (_('Main data'), {
-            'fields': ('order_number', 'order_date', 'name', 'osoba',  'appruve', 
-            'appruve_date', 'status')
+            'fields': ('order_number', 'order_date', 'name', 'osoba',  'appruve', 'appruve_date', 'status')
         }),
         
     )
 
+
 admin.site.register(StatusOrder)
+admin.site.register(AllContract)
 admin.site.register(Order, OrderAdmin)

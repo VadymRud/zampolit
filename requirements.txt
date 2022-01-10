@@ -1,7 +1,9 @@
-django
+django==3.2.*
 docxtpl
 django-extensions
 Pillow
 pymorphy2
 pymorphy2-dicts-uk
 django-filter
+django-bootstrap-datepicker-plus
+django-bootstrap4

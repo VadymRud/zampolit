@@ -15,7 +15,6 @@ class SHPK(models.Model):
         verbose_name_plural = _('SHPK')
 
 
-
 class ZvannyaName(models.Model):
     zv_id = models.AutoField(primary_key=True)
     zv_name = models.TextField()
@@ -29,20 +28,19 @@ class ZvannyaName(models.Model):
         db_table = 'zvannya_name'
 
 
-
 class Staff(models.Model):
     # Штатка
     #порядковий номер в штатці
-    unicum = models.PositiveBigIntegerField(verbose_name= _('Unic number'), blank=True)
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, blank=True, verbose_name= _('Company'))
+    unicum = models.PositiveBigIntegerField(verbose_name=_('Unic number'), blank=True)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, blank=True, verbose_name=_('Company'))
     name = models.CharField(max_length=512, verbose_name=_('Name'))
-    shpk = models.ForeignKey(SHPK, on_delete=models.CASCADE, blank=True, verbose_name= _('shpk'))
-    ocoba = models.ForeignKey(ServiseID, on_delete=models.CASCADE, blank=True, verbose_name= _('ocoba'), null=True)
-    vos = models.CharField(max_length=512, verbose_name= _('VOS'))
-    poz = models.CharField(max_length=512, verbose_name= _('pozyvnyy'), blank=True)
-    salary = models.PositiveBigIntegerField(verbose_name= _('salary'), blank=True)
-    tariff_category = models.PositiveBigIntegerField(verbose_name= _('tariff category'), blank=True)
-    vacant = models.BooleanField(verbose_name= _('Vacant'), blank=True, null=True, default=True)
+    shpk = models.ForeignKey(SHPK, on_delete=models.CASCADE, blank=True, verbose_name=_('shpk'))
+    ocoba = models.ForeignKey(ServiseID, on_delete=models.CASCADE, blank=True, verbose_name=_('ocoba'), null=True)
+    vos = models.CharField(max_length=512, verbose_name=_('VOS'))
+    poz = models.CharField(max_length=512, verbose_name=_('pozyvnyy'), blank=True)
+    salary = models.PositiveBigIntegerField(verbose_name=_('salary'), blank=True)
+    tariff_category = models.PositiveBigIntegerField(verbose_name=_('tariff category'), blank=True)
+    vacant = models.BooleanField(verbose_name=_('Vacant'), blank=True, null=True, default=True)
 
     def __str__(self):
         return self.name[:50]
@@ -50,7 +48,6 @@ class Staff(models.Model):
     class Meta:
         verbose_name = _('Staff')
         verbose_name_plural = _('Staff')
-
 
 
 class Adresa(models.Model):
@@ -61,9 +58,6 @@ class Adresa(models.Model):
     class Meta:
         managed = False
         db_table = 'adresa'
-
-
-
 
 
 class Nakaz(models.Model):
@@ -132,9 +126,9 @@ class PidrozdilName(models.Model):
 
 class Shtatka(models.Model):
     pos_id = models.AutoField(primary_key=True)
-    p = models.ForeignKey(PidrozdilName, to_field='p_id', on_delete=models.PROTECT, related_name='+' )
-    sh = models.ForeignKey(PosadaName, to_field='pos_id', on_delete=models.PROTECT, related_name='+' )
-    zv_sh = models.ForeignKey(ZvannyaName, to_field='zv_id', on_delete=models.PROTECT, related_name='+' )
+    p = models.ForeignKey(PidrozdilName, to_field='p_id', on_delete=models.PROTECT, related_name='+')
+    sh = models.ForeignKey(PosadaName, to_field='pos_id', on_delete=models.PROTECT, related_name='+')
+    zv_sh = models.ForeignKey(ZvannyaName, to_field='zv_id', on_delete=models.PROTECT, related_name='+')
     dopusk = models.CharField(max_length=1)
     vos = models.CharField(max_length=12)
     oklad = models.CharField(max_length=12)

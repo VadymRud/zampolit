@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.db import models
 from django.utils.translation import gettext as _
 from .models import (MilitaryRank, Platoon, ServiseID, Unit, OfficialPosition, Company, 
-                    Education, Creed, Nationality, Command)
+                    Education, Creed, Nationality, Command, Region, State)
 from osoba.widgets import CustomDatePickerInput
 
 
@@ -42,7 +42,9 @@ class ServiseIDAdmin(admin.ModelAdmin):
         }),
         
         (_('Address'), {
-            'fields': ('addres_pr', 'addres_fact')
+            'fields': ('state_pr', 'region_pr', 'postal_code_pr', 'addres_pr',
+                       'state_fact', 'region_fact', 'addres_fact', 'postal_code_fact',
+                       'phone1', 'phone2', 'father', 'mother', 'partner')
             
         }),
         (_('Images'), {
@@ -66,3 +68,5 @@ admin.site.register(Creed)
 admin.site.register(Nationality)
 admin.site.register(Education)
 admin.site.register(Command)
+admin.site.register(State)
+admin.site.register(Region)

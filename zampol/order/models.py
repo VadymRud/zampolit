@@ -14,6 +14,8 @@ class StatusOrder(models.Model):
         ('AL', _('Annual leave')),
         ('VFR', _('Vacation for family reasons')),
         ('SZCH', _('Unauthorized leaving of a part')),
+        ('Reward', _('Reward')),
+        ('Penalty', _('Penalty')),
         # ('Tehnic', _('Technician')),
         # ('ZKBPDP', _('Deputy Battalion Commander for Airborne Training')),
         # ('ZKBNSH', _('Chief of Staff - First Deputy Battalion Commander')), 
@@ -21,6 +23,7 @@ class StatusOrder(models.Model):
     )
     name = models.CharField(max_length=512, verbose_name=_('Name'), choices=CHOICES)
     description = models.TextField(verbose_name=_('Description'), blank=True)
+
     def __str__(self):
         return self.get_name_display()
 
@@ -31,12 +34,12 @@ class StatusOrder(models.Model):
 
 class Order(models.Model):
     name = models.CharField(max_length=512, verbose_name=_('Name'), blank=True)
-    osoba = models.ManyToManyField(ServiseID, verbose_name= _('osoba'))
+    osoba = models.ManyToManyField(ServiseID, verbose_name=_('osoba'))
     order_number = models.CharField(max_length=512, verbose_name=_('order number'))
-    order_date = models.DateField(verbose_name=_('order date'), default=timezone.now )
+    order_date = models.DateField(verbose_name=_('order date'), default=timezone.now)
     appruve = models.BooleanField(verbose_name=_('order number'), default=False)
-    appruve_date = models.DateField(verbose_name=_('appruve date'), default=timezone.now )
-    status = models.ForeignKey(StatusOrder, on_delete=models.CASCADE, verbose_name= _('status'), null=True)
+    appruve_date = models.DateField(verbose_name=_('appruve date'), default=timezone.now)
+    status = models.ForeignKey(StatusOrder, on_delete=models.CASCADE, verbose_name=_('status'), null=True)
     
     def __str__(self):
         return '{} №{}'.format(self.name[:50], self.order_number)
@@ -46,4 +49,10 @@ class Order(models.Model):
         verbose_name_plural = _('Order\'s')
 
 
-
+class AllContract(models.Model):
+    description = models.CharField(max_length=512, verbose_name=_('Description'), blank=True)
+    order_number = models.CharField(max_length=512, verbose_name=_('order number'), blank=True, null=True)
+    date_begin = models.DateField(verbose_name=_('contract begin'), default=timezone.now)
+    date_end = models.DateField(verbose_name=_('order date'), default=timezone.now)
+    osoba = models.ForeignKey(ServiseID, on_delete=models.CASCADE, blank=True, verbose_name=_('osoba'))
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, blank=True, null=True, verbose_name=_('order'))

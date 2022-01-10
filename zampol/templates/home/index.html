@@ -2,6 +2,7 @@
 {% load i18n %}
 {% load get_name %}
 {% load static %}
+<link rel="icon" href="{% static 'favicon.ico' %}">
 {% block title %}{% endblock %}
 
 {% block extra_css %}
@@ -28,12 +29,12 @@
                 
             </div>
             <menu id="html5menu-{{shtat.ocoba.pk}}" style="display:none" class="showcase">
-                <command label="Форма №5" icon="edit" onclick="getDocumentF5Ajax({{shtat.pk}})">
-                <command label="resize" onclick="alert('resize{{shtat.pk}}')"> 
-                <command label="twitter" onclick="alert('twitter{{shtat.pk}}')">
-                <hr> 
-                <command label="facebook" onclick="alert('facebook{{shtat.pk}}')">
-            S</menu>
+                <command label="Форма №5" icon="edit" onclick="getDocumentF5Ajax({{shtat.pk}})"/>
+                <command label="Службова Картка" onclick="getDocumentSCAjax({{shtat.pk}})"/>
+                <command label="Аркуш Співбесід" onclick="getInterviewAjax({{shtat.pk}})"/>
+                <hr/>
+            </menu>
+
             <script type="text/javascript">
                
                 $(function(){
