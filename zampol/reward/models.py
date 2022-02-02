@@ -77,8 +77,28 @@ class Penalty(models.Model):
         verbose_name_plural = _('Penalties')
 
 
-class Interview(models.Model):
+class Penalty(models.Model):
+    name = models.CharField(max_length=512, verbose_name=_('Name'), blank=True)
+    penalty_date = models.DateField(verbose_name=_('order date'), default=timezone.now)
+    osoba = models.ForeignKey(ServiseID, on_delete=models.CASCADE, blank=True, verbose_name=_('osoba'))
+    text = models.TextField(verbose_name=_('text'), blank=True, null=True)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, blank=True, verbose_name=_('order'))
+    type_penalty = models.ForeignKey(TypePenalty, on_delete=models.CASCADE, blank=True, verbose_name=_('Type Penalty'))
+    penalty_ocoba = models.ForeignKey(RewardOcoba, on_delete=models.CASCADE, blank=True, verbose_name=_('Penalty Ocoba'),
+                                      related_name='+')
+    date_cancel = models.DateField(verbose_name=_('date Cansel'), default=timezone.now, blank=True, null=True)
+    osoba_cancel = models.ForeignKey(RewardOcoba, on_delete=models.CASCADE, blank=True, null=True,
+                                     verbose_name=_('Ocoba Cansel'), related_name='+')
 
+    def __str__(self):
+        return self.name[:50]
+
+    class Meta:
+        verbose_name = _('Penalty')
+        verbose_name_plural = _('Penalties')
+
+
+class Interview(models.Model):
     interview_date = models.DateField(verbose_name=_('Interview date'), default=timezone.now)
     osoba = models.ForeignKey(ServiseID, on_delete=models.CASCADE, blank=True, verbose_name=_('osoba'))
     topic = models.CharField(max_length=512, verbose_name=_('Interview topic'), blank=True)

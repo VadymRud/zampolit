@@ -11,6 +11,7 @@ from staff.models import Staff
 from reward.models import Reward, Penalty, Interview
 import os
 from datetime import datetime, date
+from django.utils.translation import gettext as _
 
 
 def get_doc_tpl(staff_id, tpl_name, ctx):
@@ -67,10 +68,14 @@ class GetDocumentSСCardAJAX(View):
         penalties = Penalty.objects.filter(osoba=staff.ocoba)
         today = date.today()
         date_locale = formats.date_format(today, format='"d" E Y', use_l10n=True)
+        if staff.ocoba.date_of_conscription:
+            date_of_conscription = staff.ocoba.date_of_conscription.strftime('%d-%m-%Y')
+        else:
+            date_of_conscription = _('unknown')
         context = {'military_rank': staff.ocoba.military_ranks.name, 'sename': str(staff.ocoba.sename).upper(),
                    'name': staff.ocoba.name, 'thname': staff.ocoba.third_name, 'date': date_locale,
                    'pos_name': staff.name, 'rewards': rewards, 'penalties': penalties,
-                   'date_of_conscription': staff.ocoba.date_of_conscription.strftime('%d-%m-%Y')
+                   'date_of_conscription': date_of_conscription
                    }
         get_doc_tpl(staff_id=request.POST.get('id_staff'), tpl_name='СЛ_КАРТКА', ctx=context)
         pprint(request.POST.get('id_staff'))

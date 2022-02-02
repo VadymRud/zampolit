@@ -5,7 +5,7 @@ from django.utils.translation import gettext as _
 
 class SHPK(models.Model):
     name = models.CharField(max_length=512, verbose_name=_('Name'))
-    short_name = models.CharField(max_length=512, verbose_name=_('Short name'))
+    short_name = models.CharField(max_length=512, verbose_name=_('Short name'), blank=True, null=True)
 
     def __str__(self):
         return self.name[:50]

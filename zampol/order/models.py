@@ -56,3 +56,7 @@ class AllContract(models.Model):
     date_end = models.DateField(verbose_name=_('order date'), default=timezone.now)
     osoba = models.ForeignKey(ServiseID, on_delete=models.CASCADE, blank=True, verbose_name=_('osoba'))
     order = models.ForeignKey(Order, on_delete=models.CASCADE, blank=True, null=True, verbose_name=_('order'))
+
+    class Meta:
+        verbose_name = _('Contract')
+        verbose_name_plural = _('Contracts')

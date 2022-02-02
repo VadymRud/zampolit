@@ -6,51 +6,88 @@
 {% block title %}{% endblock %}
 
 {% block extra_css %}
-    <link href="{% static "jQcontextMenu/jquery.contextMenu.min.css" %}" rel="stylesheet">
+    <link href="{% static "index/index.css" %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
 <script type="text/javascript" src="{% static "jquery-3.5.1.min.js" %}"></script>
 
 <h1>{{my_blog}} </h1>
-    {%for company in object_list  %}
-        <h1><b>{{company.name}} </b></h1><br/>
-        {%get company.pk as companies%}
+    <style>
 
-        {%for shtat in companies%}
-            <div class="context-menu-one item-{{shtat.ocoba.pk}}">
-                {{shtat.name}} --
-                {%if shtat.ocoba.name%}
-                    {{shtat.ocoba.name}}
-                {%else%}
-                    vacant
-                {%endif%}
-                <br/>
-                
-            </div>
-            <menu id="html5menu-{{shtat.ocoba.pk}}" style="display:none" class="showcase">
-                <command label="Форма №5" icon="edit" onclick="getDocumentF5Ajax({{shtat.pk}})"/>
-                <command label="Службова Картка" onclick="getDocumentSCAjax({{shtat.pk}})"/>
-                <command label="Аркуш Співбесід" onclick="getInterviewAjax({{shtat.pk}})"/>
-                <hr/>
-            </menu>
+    </style>
+<div class="wrapper">
+<table class="table table-hover" id="job-table">
+      <thead>
+        <tr class="text-center">
+          <th scope="col">{% translate "Unic number" %}</th>
+          <th scope="col">{% translate "Name Staff" %}</th>
+          <th scope="col">{% translate "SHPK" %}</th>
+          <th scope="col">{% translate "Military rank" %}</th>
+          <th scope="col">{% translate "VOS" %}</th>
+          <th scope="col">{% translate "Name" %}</th>
+          <th scope="col">{% translate "Nickname" %}</th>
+        </tr>
+      </thead>
+      <tbody class="text-center tableBody">
+            {%for company in object_list  %}
+                <tr key={key}>
+                    <td colspan="7" class="font-weight-bold"><h1><b>{{company.name}} </b></h1></td>
 
-            <script type="text/javascript">
-               
-                $(function(){
-                    $.contextMenu({
-                        selector: '.item-{{shtat.ocoba.pk}}', 
-                        items: $.contextMenu.fromMenu($('#html5menu-{{shtat.ocoba.pk}}'))
-                    });
-                });      
-            </script>
-        {%endfor%}
-    {% endfor %}
+                    {%get company.pk as companies%}
+                </tr>
+
+                {%for shtat in companies%}
+                    <tr class="item">
+                        <td>
+                            <input type="hidden" value="{{shtat.pk}}">
+                            {{shtat.unicum}}
+                        </td>
+                        <td>
+                            {{shtat.name}}
+                        </td>
+                        <td>
+                            {{ shtat.shpk }}
+                        </td>
+                        <td>
+                            {{ shtat.ocoba.military_ranks.name }}
+                        </td>
+                        <td>
+                            {{ shtat.vos }}
+                        </td>
+                        <td>
+                            {%if shtat.ocoba.name%}
+                               {{shtat.ocoba.sename}} {{shtat.ocoba.name}} {{shtat.ocoba.third_name}}
+                            {%else%}
+                                vacant
+                            {%endif%}
+                        </td>
+                        <td>
+                            {{ shtat.ocoba.nickname|default_if_none:"" }}
+                        </td>
+
+                    </tr>
+                {%endfor%}
+
+            {% endfor %}
+            <tr key={key}>
+              <td class="font-weight-bold">1</td>
+              <td class="font-weight-bold">ABCDED</td>
+              <td>Software Developer</td>
+              <td class="font-weight-bold">17</td>
+              <td>5 years experience</td>
+              <td class="font-weight-bold">30</td>
+              <td class="font-weight-bold">30</td>
+            </tr>
+      </tbody>
+</table>
+
 {% endblock %}
 
 {% block extra_js %}
     <script type="text/javascript" src="{% static "jquery-3.5.1.min.js" %}"></script>
-    <script type="text/javascript" src="{% static "jQcontextMenu/jquery.contextMenu.min.js" %}"></script>
-    <script type="text/javascript" src="{% static "jQcontextMenu/jquery.ui.position.min.js" %}"></script>
+{#    <script type="text/javascript" src="{% static "jQcontextMenu/jquery.contextMenu.min.js" %}"></script>#}
+{#    <script type="text/javascript" src="{% static "jQcontextMenu/jquery.ui.position.min.js" %}"></script>#}
+    <script type="text/javascript" src="{% static "contextmenu.js" %}"></script>
     <script type="text/javascript" src="{% static "index/index.js" %}"></script>
 {% endblock %}

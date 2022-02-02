@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-10 12:16+0200\n"
+"POT-Creation-Date: 2022-01-10 14:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,13 +119,19 @@ msgstr "Накази"
 
 #: .\order\models.py:55
 msgid "contract begin"
-msgstr ""
+msgstr "Начало контракта"
 
 #: .\order\models.py:58 .\reward\models.py:47 .\reward\models.py:64
-#, fuzzy
-#| msgid "Order"
 msgid "order"
 msgstr "Наказ"
+
+#: .\order\models.py:61
+msgid "Contract"
+msgstr "Контракт"
+
+#: .\order\models.py:62
+msgid "Contracts"
+msgstr "Контракти"
 
 #: .\osoba\admin.py:17
 msgid "Names in accs"
@@ -219,24 +225,20 @@ msgid "Education"
 msgstr "Освіта"
 
 #: .\osoba\models.py:96
-#, fuzzy
-#| msgid "Statuses"
 msgid "State"
-msgstr "Статуси"
+msgstr "Область"
 
 #: .\osoba\models.py:97
-#, fuzzy
-#| msgid "Statuses"
 msgid "States"
-msgstr "Статуси"
+msgstr "Області"
 
 #: .\osoba\models.py:107
 msgid "Region"
-msgstr ""
+msgstr "Райони"
 
 #: .\osoba\models.py:108
 msgid "Regions"
-msgstr ""
+msgstr "Райони"
 
 #: .\osoba\models.py:113 .\staff\models.py:14 .\staff\models.py:15
 msgid "SHPK"
@@ -263,17 +265,14 @@ msgid "third name"
 msgstr "По батькові"
 
 #: .\osoba\models.py:133
-#| msgid "Name Person"
 msgid "Name Person in accs"
 msgstr "Ім'я В/С в давальному відмінку"
 
 #: .\osoba\models.py:134
-#| msgid "Sename"
 msgid "Sename in accs"
 msgstr "Прізвище в давальному відмінку"
 
 #: .\osoba\models.py:135
-#| msgid "third name"
 msgid "third name  in accs"
 msgstr "По батькові в давальному відмінку"
 
@@ -390,7 +389,6 @@ msgid "RH"
 msgstr "RH"
 
 #: .\osoba\models.py:180
-#| msgid "status"
 msgid "state"
 msgstr "Область"
 
@@ -415,7 +413,6 @@ msgid "region fact"
 msgstr "Район проживання"
 
 #: .\osoba\models.py:191
-#| msgid "addres_fact"
 msgid "address fact"
 msgstr "адреса фактичного проживання"
 
@@ -492,7 +489,6 @@ msgid "Senior assistant chief of staff for personnel and military units"
 msgstr "Старший помічник начальника штабу з кадрів і стройової частини"
 
 #: .\osoba\models.py:221
-#| msgid "Name Person"
 msgid "Name Command"
 msgstr "Командування"
 
@@ -524,6 +520,11 @@ msgstr "Переміщення"
 msgid "Relocation's"
 msgstr "Переміщення"
 
+#: .\reward\apps.py:8
+#| msgid "Rewards or Penalty ocobs"
+msgid "Rewards and Penalties"
+msgstr "Нагороди та догани"
+
 #: .\reward\models.py:16
 msgid "Type of reward"
 msgstr "Нагорода"
@@ -553,12 +554,10 @@ msgid "text"
 msgstr "Текст"
 
 #: .\reward\models.py:48
-#| msgid "Reward"
 msgid "Type Reward"
 msgstr "Заоохочення та нагороди"
 
 #: .\reward\models.py:49
-#| msgid "Reward"
 msgid "Reward Ocoba"
 msgstr "Заоохочення та нагороди"
 
@@ -567,12 +566,10 @@ msgid "Rewards"
 msgstr "Заоохочення та нагороди"
 
 #: .\reward\models.py:65
-#| msgid "Penalty"
 msgid "Type Penalty"
 msgstr "Типи доган"
 
 #: .\reward\models.py:66
-#| msgid "Penalty"
 msgid "Penalty Ocoba"
 msgstr "Хто дав догану"
 
@@ -589,7 +586,6 @@ msgid "Penalties"
 msgstr "Догани"
 
 #: .\reward\models.py:82
-#| msgid "appruve date"
 msgid "Interview date"
 msgstr "Дата прийому на службу"
 
@@ -673,7 +669,6 @@ msgid "Site Maps"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
-#| msgid "Statuses"
 msgid "Static Files"
 msgstr "Статичні файли"
 
@@ -2777,6 +2772,10 @@ msgstr "Англійська"
 #: .\zampol\settings.py:139
 msgid "Українська"
 msgstr "Українська"
+
+#~| msgid "Rewards or Penalty ocobs"
+#~ msgid "Нагороди та догани"
+#~ msgstr "Особи, які дали догану чи нагороду"
 
 #, fuzzy
 #~| msgid "Staff"

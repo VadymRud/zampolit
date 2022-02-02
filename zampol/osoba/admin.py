@@ -12,7 +12,7 @@ class ServiseIDAdmin(admin.ModelAdmin):
         #    'fields': ('field1', 'field2', 'field3')
         # }),
         (_('Main data'), {
-            'fields': ('name', 'sename', 'third_name', 'birth_date')
+            'fields': ('name', 'sename', 'third_name', 'birth_date', 'nickname')
         }),
         (_('Names in accs'), { #давальний відмінок
             'fields': ('name_accs', 'sename_accs', 'third_name_accs')
@@ -27,7 +27,7 @@ class ServiseIDAdmin(admin.ModelAdmin):
 
         (_('General information'), {
             'fields': ('orphan',
-            'married', 'halforphan', 'work', 'mobilization', 'driveid', 'creed',
+            'married', 'halforphan', 'work', 'mobilization', 'driveid', 'driveid_category', 'creed',
             'nationality', 'education',  'blood_type', 'rh')
         }),
 

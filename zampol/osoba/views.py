@@ -8,6 +8,7 @@ from staff.models import Staff, Company
 
 class HomePageView(ListView):
     template_name = 'home/index.html'
+
     def get_queryset(self):
         return Company.objects.order_by('unik')
     # def get_context_data(self, **kwargs):

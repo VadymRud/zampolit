@@ -7,7 +7,7 @@ from django import forms
 
 class MilitaryRank(models.Model):
     name = models.CharField(max_length=512, verbose_name=_('Name'))
-    short_name = models.CharField(max_length=512, verbose_name=_('Short name'))
+    short_name = models.CharField(max_length=512, verbose_name=_('Short name'), blank=True, null=True)
     
     def __str__(self):
         return self.name[:50]
@@ -128,7 +128,8 @@ def image_directory_path(instance, filename):
 class ServiseID(models.Model):
     name = models.CharField(max_length=512, verbose_name=_('Name Person'))
     sename = models.CharField(max_length=512, verbose_name=_('Sename'))
-    third_name = models.CharField(max_length=512, verbose_name=_('third name'))
+    third_name = models.CharField(max_length=512, verbose_name=_('third name'), blank=True, null=True)
+    nickname = models.CharField(max_length=512, verbose_name=_('nickname'), blank=True, null=True)
     # В давальному відмінку
     name_accs = models.CharField(max_length=512, verbose_name=_('Name Person in accs'), blank=True, null=True)
     sename_accs = models.CharField(max_length=512, verbose_name=_('Sename in accs'), blank=True, null=True)
@@ -170,6 +171,7 @@ class ServiseID(models.Model):
     work = models.BooleanField(_('work'), default=False)
     mobilization = models.BooleanField(_('mobilization'), default=False)
     driveid = models.BooleanField(_('driveid'), default=False)
+    driveid_category = models.CharField(max_length=100, verbose_name=_('driveid category'), blank=True, null=True)
     creed = models.ForeignKey(Creed, on_delete=models.CASCADE, blank=True, null =True, verbose_name=_('creed'))
     nationality = models.ForeignKey(Nationality, on_delete=models.CASCADE, blank=True, null=True, verbose_name=_('nationality'))
     education = models.ForeignKey(Education, on_delete=models.CASCADE, blank=True, null=True, verbose_name=_('Education'))
@@ -197,8 +199,8 @@ class ServiseID(models.Model):
     partner = models.CharField(max_length=500, verbose_name=_('partner'), blank=True, null=True)
 
     def __str__(self):
-        return '{} {} {} {}'.format(str(self.military_ranks.name), str(self.name),
-                                    str(self.sename), str(self.third_name))
+        return '{} {} {} {}'.format(str(self.military_ranks.name), str.upper(self.sename), str(self.name),
+                                    str(self.third_name))
 
     class Meta:
         verbose_name = _('ServiseID')
